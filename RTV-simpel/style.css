@@ -1,0 +1,365 @@
+/* style.css */
+
+/* --- Reset dan Font Global --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Warna yang terinspirasi RTV */
+    --primary-gradient: linear-gradient(135deg, #6a82fb, #00d2ff); /* Ungu-Biru ke Biru-Cyan */
+    --secondary-bg: #e0f7fa; /* Teal muda untuk About Us */
+    --text-color: #333;
+    --white: #ffffff;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius-lg: 16px;
+    --border-radius-sm: 8px;
+    --padding-xl: 40px;
+    --padding-lg: 30px;
+    --padding-md: 20px;
+    --padding-sm: 10px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font bersih, modern, rapi */
+    color: var(--text-color);
+    line-height: 1.6;
+    background: #f4f7f6; /* Background putih-abu untuk kontras */
+}
+
+/* --- Tata Letak Utama Halaman --- */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--padding-md);
+}
+
+/* --- Header & Navigasi --- */
+.header {
+    background: var(--white);
+    box-shadow: var(--shadow-light);
+    padding: var(--padding-md) 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #00bcd4; /* Warna khas */
+    text-decoration: none;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: var(--padding-lg);
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: var(--padding-sm) 0;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #6a82fb;
+    border-bottom: 2px solid #6a82fb;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+    padding: var(--padding-xl) 0;
+    min-height: 70vh;
+}
+
+/* --- Kontainer Gaya RTV (Card, Slider, dll.) --- */
+.white-container {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
+    padding: var(--padding-lg);
+    margin-bottom: var(--padding-xl);
+}
+
+/* --- Bubble Title Style (Untuk About, Contact, Program) --- */
+.bubble-title {
+    display: inline-block;
+    background: var(--white);
+    padding: var(--padding-sm) var(--padding-lg);
+    border-radius: 50px; /* Bentuk oval/bubble */
+    box-shadow: var(--shadow-light);
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: var(--padding-xl);
+    position: relative;
+    color: #00bcd4;
+}
+
+.bubble-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Posisi di bawah bubble */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: var(--primary-gradient); /* Garis horizontal gradasi */
+}
+
+
+/* --- Banner Home --- */
+.hero-banner {
+    min-height: 300px;
+    background: var(--primary-gradient); /* Warna solid gradasi atau placeholder gambar */
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--padding-xl);
+    padding: var(--padding-xl);
+}
+
+.hero-banner h1 {
+    font-size: 3em;
+    margin-bottom: var(--padding-sm);
+}
+
+.hero-banner p {
+    font-size: 1.2em;
+}
+
+/* --- Program Highlight (Home) --- */
+.program-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--padding-md);
+}
+
+.program-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
+    padding: var(--padding-md);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.program-card-image {
+    width: 100%;
+    height: 180px;
+    background: #ccc; /* Placeholder warna */
+    border-radius: var(--border-radius-sm);
+    margin-bottom: var(--padding-sm);
+    overflow: hidden;
+    /* Ganti dengan URL gambar/animasi nyata */
+    /* background-image: url('placeholder.gif'); */
+    background-size: cover;
+    background-position: center;
+}
+
+.program-card h3 {
+    color: #6a82fb;
+    margin-bottom: var(--padding-sm);
+    font-size: 1.2em;
+}
+
+.program-card p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* --- About Us Page Specific --- */
+.about-us-content {
+    background: var(--secondary-bg); /* Background teal muda */
+    padding: var(--padding-xl);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+}
+
+.about-us-content p {
+    max-width: 800px;
+    margin: var(--padding-lg) auto;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+/* --- Contact Us Page Specific --- */
+.contact-info {
+    text-align: center;
+    margin-bottom: var(--padding-xl);
+}
+
+.contact-info h3 {
+    margin-top: var(--padding-lg);
+    color: #00bcd4;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--padding-lg);
+}
+
+.form-group {
+    margin-bottom: var(--padding-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: var(--padding-sm);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius-sm);
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-button {
+    background: #6a82fb;
+    color: var(--white);
+    padding: var(--padding-sm) var(--padding-lg);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+    display: block;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background: #00d2ff;
+}
+
+/* --- Program Page Specific --- */
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--padding-md);
+}
+.program-item {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
+    padding: var(--padding-md);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.program-item:hover {
+    transform: scale(1.02);
+}
+
+.program-item-image {
+    width: 100%;
+    height: 120px;
+    background: #ccc; /* Placeholder */
+    border-radius: var(--border-radius-sm);
+    margin-bottom: var(--padding-sm);
+    /* Untuk gambar kartun/animasi */
+    /* background-image: url('cartoon-program.png'); */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.program-item h4 {
+    color: var(--text-color);
+    font-size: 1.1em;
+    margin: 0;
+}
+
+
+/* --- Footer (Opsional: Tambahkan di semua halaman) --- */
+.footer {
+    text-align: center;
+    padding: var(--padding-md) 0;
+    border-top: 1px solid #eee;
+    color: #999;
+    font-size: 0.8em;
+}
+
+/* --- Desain Responsif (Mobile View) --- */
+@media (max-width: 768px) {
+    :root {
+        --padding-xl: 30px;
+        --padding-lg: 20px;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: var(--padding-md);
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .nav-menu li {
+        margin: 5px 0;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 8px 0;
+    }
+
+    .hero-banner h1 {
+        font-size: 2em;
+    }
+
+    .program-highlight-grid,
+    .program-grid {
+        grid-template-columns: 1fr; /* Tumpukan kartu di mobile */
+    }
+
+    .bubble-title {
+        font-size: 1.5em;
+    }
+}
+
+/* Tambahkan padding di sisi kontainer untuk tampilan desktop yang lebih baik */
+@media (min-width: 1200px) {
+    .page-container {
+        padding: 0 var(--padding-xl);
+    }
+}

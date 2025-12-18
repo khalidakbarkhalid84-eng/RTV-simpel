@@ -1,0 +1,25 @@
+// script.js
+
+// 1. Smooth Scrolling di Navigasi (Sudah ditangani oleh CSS: scroll-behavior: smooth;)
+
+// 2. Observer untuk Animasi Section
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Tambahkan class untuk memulai animasi (misalnya: fade-in)
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1 // Mulai animasi saat 10% section terlihat
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+        // Atur state awal section (sebelum terlihat)
+        section.classList.add('hidden'); 
+    });
+});

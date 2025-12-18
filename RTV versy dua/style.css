@@ -1,0 +1,85 @@
+/* ====== STYLE RINGAN UNTUK RTV SIMPEL ====== */
+
+/* ----- GLOBAL ----- */
+body {
+    background-color: #f5f7fa;
+}
+
+/* ----- NAVBAR ----- */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Aktif link warna biru */
+.nav-link.active {
+    color: #0d6efd !important;
+    font-weight: 600;
+}
+
+/* Hover link */
+.nav-link:hover {
+    color: #0d6efd !important;
+}
+
+/* ----- HERO SECTION ----- */
+.hero-banner {
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ----- SECTION JUDUL ----- */
+.section-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0d6efd;
+    text-transform: uppercase;
+}
+
+/* ----- CARD / PROGRAM / VIDEO ----- */
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Card image height */
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+/* ----- VIDEO CARD ----- */
+.video-card iframe {
+    border-radius: 15px;
+    width: 100%;
+}
+
+/* ----- FOOTER ----- */
+footer {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ----- SMALL UTILITY SPACING ----- */
+.section-padding {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* ----- BUBBLE TITLE (SEPERTI VERSI LAMA) ----- */
+.bubble-title {
+    display: inline-block;
+    background: white;
+    padding: 10px 25px;
+    border-radius: 40px;
+    font-size: 2rem;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: #0d6efd;
+}

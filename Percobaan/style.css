@@ -1,0 +1,36 @@
+:root {
+    --color-dark: #121212; /* Hampir Hitam */
+    --color-darker: #000000; /* Hitam Penuh */
+    --color-aqua: #00FFFF; /* Aqua terang */
+    --color-light: #f0f0f0; /* Teks terang */
+    --color-secondary-text: #b3b3b3; /* Teks sekunder */
+    --font-primary: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Untuk memastikan fallback smooth scroll */
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-darker);
+    color: var(--color-light);
+    line-height: 1.6;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+    background-image: url('minato-namikaze-3840x2160-24353.jpg');
+    background-size: cover; /* Pastikan gambar menutupi seluruh area */
+    background-position: center; /* Posisikan gambar di tengah */
+    background-repeat: no-repeat; /* Hindari pengulangan gambar */
+    background-attachment: fixed; /* Membuat latar belakang tetap saat konten di-scroll */
+}
+
+.coba {
+    background-color: #00FFFF;
+    color: #000000;
+}

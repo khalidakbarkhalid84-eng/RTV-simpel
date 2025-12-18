@@ -1,0 +1,47 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Smooth Scroll untuk Navigasi
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // 2. Toggle Menu Navigasi di Mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+        menuToggle.textContent = mainNav.classList.contains('active') ? '✖' : '☰';
+    });
+    
+    // 3. Simple Hero Banner Slider
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        // Nonaktifkan semua slide
+        slides.forEach(slide => slide.classList.remove('active'));
+        // Aktifkan slide yang diinginkan
+        slides[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Atur interval pergeseran slide (misalnya, setiap 5 detik)
+    if (slides.length > 1) {
+        setInterval(nextSlide, 5000); 
+    }
+});
